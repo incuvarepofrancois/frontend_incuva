@@ -1,0 +1,72 @@
+.onboarding-page { max-width: 1220px; margin: 0 auto; padding-bottom: 36px; color: #18212d; }
+.onboarding-heading { margin-bottom: 20px; }
+.onboarding-metrics { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin-bottom: 18px; }
+.onboarding-metric { display: grid; grid-template-columns: 30px 1fr; align-items: center; column-gap: 9px; min-height: 91px; padding: 14px 15px; border: 1px solid #dedbd5; background: #fff; }
+.onboarding-metric-icon { display: grid; width: 29px; height: 29px; grid-row: span 2; place-items: center; color: #a55f45; background: #f3eee8; }
+.onboarding-metric-label { color: #68717b; font-size: 10px; }
+.onboarding-metric strong { align-self: start; font-size: 21px; font-weight: 600; letter-spacing: -.04em; }
+.onboarding-metric-note { grid-column: 2; color: #858a8e; font-size: 9px; }
+.onboarding-feedback { margin-bottom: 14px; padding: 10px 13px; border: 1px solid #dedbd5; font-size: 11px; }
+.onboarding-feedback.is-error { border-color: #e7c9c0; color: #914c3b; background: #fbf3f0; }
+.onboarding-feedback.is-success { color: #315b4c; background: #f1f6f2; }
+.onboarding-workspace { display: grid; grid-template-columns: minmax(250px, .74fr) minmax(0, 1.5fr); gap: 12px; }
+.onboarding-panel { border: 1px solid #dedbd5; background: #fff; }
+.onboarding-create-panel, .onboarding-list-panel { padding: 19px; }
+.onboarding-panel-heading { display: flex; align-items: center; gap: 10px; margin-bottom: 17px; }
+.onboarding-panel-icon { display: grid; width: 32px; height: 32px; flex: 0 0 auto; place-items: center; color: #a55f45; background: #f3eee8; }
+.onboarding-panel-heading h3 { margin: 4px 0 0; color: #18212d; font-size: 15px; font-weight: 600; letter-spacing: -.025em; }
+.onboarding-panel-heading .module-section-kicker { font-size: 8px; }
+.onboarding-count { display: grid; width: 25px; height: 25px; margin-left: auto; place-items: center; border: 1px solid #e5e0d9; color: #68717b; font-size: 10px; }
+.onboarding-form { display: grid; gap: 8px; }
+.onboarding-form label, .onboarding-add-task label { color: #53606a; font-size: 10px; font-weight: 600; }
+.onboarding-form select, .onboarding-form input, .onboarding-task select, .onboarding-add-task input { min-width: 0; min-height: 38px; padding: 0 10px; border: 1px solid #dedbd5; border-radius: 0; color: #18212d; background: #fff; font: inherit; font-size: 11px; }
+.onboarding-form select:focus, .onboarding-form input:focus, .onboarding-task select:focus, .onboarding-add-task input:focus { outline: 2px solid #a55f45; outline-offset: 2px; }
+.onboarding-primary-button, .onboarding-secondary-button { display: inline-flex; min-height: 38px; align-items: center; justify-content: center; gap: 8px; border: 1px solid #192630; color: #f4f2ed; background: #192630; font: inherit; font-size: 10px; font-weight: 600; cursor: pointer; }
+.onboarding-primary-button { margin-top: 5px; }
+.onboarding-primary-button:hover, .onboarding-secondary-button:hover { background: #2a3a43; }
+.onboarding-primary-button:disabled, .onboarding-secondary-button:disabled { opacity: .55; cursor: wait; }
+.onboarding-form-note, .onboarding-human-note { margin: 4px 0 0; color: #7a8185; font-size: 9px; line-height: 1.65; }
+.onboarding-no-employees { display: flex; align-items: flex-start; gap: 10px; padding: 13px; color: #68717b; background: #f7f5f1; }
+.onboarding-no-employees svg { flex: 0 0 auto; color: #a55f45; }
+.onboarding-no-employees p { margin: 0; font-size: 10px; line-height: 1.6; }
+.onboarding-plan-list { display: grid; }
+.onboarding-plan-row { display: flex; width: 100%; align-items: center; gap: 11px; padding: 11px 8px; border: 0; border-top: 1px solid #efede9; text-align: left; background: #fff; cursor: pointer; }
+.onboarding-plan-row:hover, .onboarding-plan-row.is-selected { background: #faf8f5; }
+.onboarding-plan-row.is-selected { box-shadow: inset 2px 0 #a55f45; }
+.onboarding-plan-avatar { display: grid; width: 34px; height: 34px; flex: 0 0 auto; place-items: center; color: #855542; background: #f3eee8; font-size: 10px; font-weight: 650; }
+.onboarding-plan-copy { display: grid; min-width: 0; flex: 1; gap: 4px; }
+.onboarding-plan-copy strong { overflow: hidden; color: #18212d; font-size: 11px; font-weight: 600; text-overflow: ellipsis; white-space: nowrap; }
+.onboarding-plan-copy > span { overflow: hidden; color: #777f84; font-size: 9px; text-overflow: ellipsis; white-space: nowrap; }
+.onboarding-plan-progress { display: grid; width: 70px; gap: 5px; color: #68717b; font-size: 9px; text-align: right; }
+.onboarding-progress-track { display: block; height: 4px; overflow: hidden; background: #eeeae4; }
+.onboarding-progress-track > span { display: block; height: 100%; background: #a55f45; transition: width .25s ease; }
+.onboarding-empty { display: flex; min-height: 92px; align-items: center; gap: 12px; color: #68717b; font-size: 11px; }
+.onboarding-empty-icon { display: grid; width: 36px; height: 36px; flex: 0 0 auto; place-items: center; color: #a55f45; background: #f3eee8; }
+.onboarding-empty strong { color: #18212d; font-size: 11px; }
+.onboarding-empty p { margin: 5px 0 0; font-size: 10px; line-height: 1.5; }
+.onboarding-detail-panel { margin-top: 12px; padding: 20px; }
+.onboarding-detail-header { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding-bottom: 15px; border-bottom: 1px solid #efede9; }
+.onboarding-detail-header h3 { margin: 5px 0 0; color: #18212d; font-size: 18px; font-weight: 600; letter-spacing: -.035em; }
+.onboarding-detail-header h3 span { color: #7a8185; font-size: 11px; font-weight: 400; letter-spacing: 0; }
+.onboarding-status-pill { padding: 6px 9px; border: 1px solid #e4ded6; color: #7d634b; background: #f8f5f0; font-size: 9px; }
+.onboarding-status-pill.completed { border-color: #d7e4da; color: #3f7056; background: #f1f6f2; }
+.onboarding-progress-summary { display: grid; gap: 8px; margin: 15px 0; }
+.onboarding-progress-summary > div:first-child { display: flex; justify-content: space-between; color: #68717b; font-size: 10px; }
+.onboarding-progress-summary strong { color: #18212d; font-weight: 600; }
+.onboarding-task-list { display: grid; margin: 0; padding: 0; list-style: none; }
+.onboarding-task { display: grid; grid-template-columns: 23px minmax(0, 1fr) 112px; align-items: center; gap: 11px; padding: 12px 4px; border-top: 1px solid #efede9; }
+.onboarding-task-marker { display: grid; width: 22px; height: 22px; place-items: center; border: 1px solid #dcd8d1; border-radius: 50%; color: #fff; }
+.onboarding-task.is-complete .onboarding-task-marker { border-color: #567762; background: #567762; }
+.onboarding-task-copy { display: grid; gap: 4px; }
+.onboarding-task-copy strong { color: #27323b; font-size: 11px; font-weight: 600; }
+.onboarding-task-copy p { margin: 0; color: #68717b; font-size: 10px; }
+.onboarding-task-copy > span { color: #858a8e; font-size: 9px; }
+.onboarding-task select { min-height: 32px; padding: 0 7px; font-size: 9px; }
+.onboarding-add-task { display: grid; grid-template-columns: minmax(0, 1fr) 145px auto; align-items: end; gap: 9px; margin-top: 13px; padding-top: 14px; border-top: 1px solid #efede9; }
+.onboarding-add-task > div { display: grid; gap: 6px; }
+.onboarding-secondary-button { min-height: 36px; padding: 0 11px; }
+.onboarding-human-note { margin-top: 15px; }
+.onboarding-page button:focus-visible { outline: 2px solid #a55f45; outline-offset: 3px; }
+@media (max-width: 850px) { .onboarding-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); } .onboarding-workspace { grid-template-columns: 1fr; } }
+@media (max-width: 560px) { .onboarding-heading { align-items: flex-start; } .onboarding-heading .module-heading-index { display: none; } .onboarding-metrics { gap: 7px; } .onboarding-metric { min-height: 82px; padding: 11px; } .onboarding-task { grid-template-columns: 22px minmax(0, 1fr); } .onboarding-task select { grid-column: 2; width: 100%; } .onboarding-add-task { grid-template-columns: 1fr; } .onboarding-secondary-button { width: 100%; } .onboarding-detail-panel { padding: 15px; } }
+@media (prefers-reduced-motion: reduce) { .onboarding-progress-track > span { transition: none; } }

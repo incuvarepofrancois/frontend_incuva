@@ -1,0 +1,45 @@
+.register-page { --register-ink: #18212d; --register-muted: #68717b; --register-border: #dedbd5; --register-accent: #a55f45; display: grid; min-height: 100vh; min-height: 100dvh; place-items: center; padding: 38px 24px; color: var(--register-ink); background: #f4f2ed; }
+.register-shell { display: grid; width: min(100%, 920px); min-height: 610px; grid-template-columns: 0.94fr 1fr; overflow: hidden; border: 1px solid var(--register-border); background: #fff; box-shadow: 0 20px 65px rgba(24, 33, 45, 0.07); }
+.register-story { display: flex; min-width: 0; flex-direction: column; padding: 34px 38px 26px; color: #f4f2ed; background: #192630; }
+.register-brand { display: inline-flex; width: fit-content; align-items: center; gap: 10px; color: #f4f2ed; font-size: 13px; font-weight: 750; letter-spacing: 0.13em; text-decoration: none; }
+.register-brand-mark { display: grid; width: 31px; height: 31px; place-items: center; border: 1px solid rgba(244, 242, 237, 0.24); color: #d6b8a6; font-family: Georgia, serif; font-size: 21px; font-weight: 700; letter-spacing: 0; }
+.register-story-copy { max-width: 400px; margin: auto 0; padding: 58px 0 70px; }
+.register-eyebrow, .register-form-kicker { color: var(--register-accent); font-size: 9px; font-weight: 700; letter-spacing: 0.16em; }
+.register-eyebrow { color: #d6b8a6; }
+.register-story-copy h1 { margin: 17px 0 14px; color: #f4f2ed; font-size: clamp(30px, 3.6vw, 43px); font-weight: 550; letter-spacing: -0.055em; line-height: 1.12; }
+.register-story-copy h1 span { color: #d6b8a6; }
+.register-story-copy p { max-width: 340px; margin: 0; color: #c1c7c8; font-size: 13px; line-height: 1.75; }
+.register-trust-note { display: flex; align-items: center; gap: 9px; color: #d0d2ce; font-size: 10px; line-height: 1.5; }
+.register-trust-note svg { flex: 0 0 auto; color: #c18b70; }
+.register-story-index { margin-top: 25px; color: #8c999e; font-size: 8px; font-weight: 600; letter-spacing: 0.12em; }
+.register-story-index span, .register-mobile-brand span { padding: 0 5px; color: #a55f45; }
+.register-form-panel { display: flex; min-width: 0; flex-direction: column; justify-content: center; padding: 40px clamp(30px, 5vw, 64px) 25px; }
+.register-mobile-brand { display: none; }
+.register-form-heading { margin-bottom: 24px; }
+.register-form-kicker { display: block; margin-bottom: 10px; }
+.register-form-heading h2 { margin: 0; color: var(--register-ink); font-size: 28px; font-weight: 600; letter-spacing: -0.045em; }
+.register-form-heading p { margin: 8px 0 0; color: var(--register-muted); font-size: 12px; line-height: 1.6; }
+.register-form { display: grid; gap: 14px; }
+.register-field label { display: flex; justify-content: space-between; gap: 8px; margin-bottom: 6px; color: #39434e; font-size: 11px; font-weight: 650; }
+.register-field label span { color: #858a8c; font-size: 9px; font-weight: 450; }
+.register-field input { display: block; width: 100%; min-height: 41px; padding: 0 12px; border: 1px solid #d8d5ce; border-radius: 2px; outline: none; color: var(--register-ink); background: #fff; font: inherit; font-size: 12px; transition: border-color 150ms ease, box-shadow 150ms ease; }
+.register-input-wrap { position: relative; }
+.register-input-wrap svg { position: absolute; top: 13px; left: 12px; color: #8b5947; }
+.register-input-wrap input { padding-left: 37px; }
+.register-field input::placeholder { color: #a0a19e; }
+.register-field input:hover { border-color: #b9b2a7; }
+.register-field input:focus { border-color: #a55f45; box-shadow: 0 0 0 3px rgba(165, 95, 69, 0.11); }
+.register-submit { display: inline-flex; min-height: 44px; align-items: center; justify-content: center; gap: 9px; margin-top: 3px; border: 1px solid #192630; border-radius: 2px; color: #f4f2ed; background: #192630; font: inherit; font-size: 12px; font-weight: 600; cursor: pointer; transition: background 150ms ease, border-color 150ms ease; }
+.register-submit:hover:not(:disabled) { border-color: #2a3a43; background: #2a3a43; }
+.register-submit:disabled { cursor: wait; opacity: 0.72; }
+.register-submit:focus-visible { outline: 2px solid #a55f45; outline-offset: 3px; }
+.register-spinner { width: 14px; height: 14px; border: 2px solid rgba(244, 242, 237, 0.35); border-top-color: #f4f2ed; border-radius: 50%; animation: register-spin 700ms linear infinite; }
+.register-error { padding: 10px 12px; border: 1px solid #e2c8bd; color: #874a3b; background: #fbf4f0; font-size: 11px; line-height: 1.5; }
+.register-login-link { margin: 19px 0 0; color: #737a7c; font-size: 11px; text-align: center; }
+.register-login-link a { color: #8b5947; font-weight: 650; text-decoration: underline; text-decoration-color: rgba(139, 89, 71, 0.35); text-underline-offset: 3px; }
+.register-login-link a:hover { color: #192630; text-decoration-color: currentColor; }
+.register-login-link a:focus-visible { border-radius: 1px; outline: 2px solid #a55f45; outline-offset: 3px; }
+.register-copyright { margin: auto 0 0; padding-top: 22px; color: #8a8f90; font-size: 9px; text-align: center; }
+@keyframes register-spin { to { transform: rotate(360deg); } }
+@media (max-width: 700px) { .register-page { place-items: start center; padding: 20px 14px; } .register-shell { width: min(100%, 470px); min-height: min(760px, calc(100dvh - 40px)); grid-template-columns: 1fr; } .register-story { min-height: 185px; padding: 20px 23px; } .register-brand { font-size: 11px; } .register-brand-mark { width: 27px; height: 27px; font-size: 18px; } .register-story-copy { margin: auto 0; padding: 28px 0 20px; } .register-eyebrow { font-size: 8px; } .register-story-copy h1 { margin: 10px 0 7px; font-size: 25px; } .register-story-copy p { font-size: 11px; } .register-trust-note, .register-story-index { display: none; } .register-form-panel { padding: 27px 23px 20px; } .register-mobile-brand { display: block; margin-bottom: 20px; color: #7b7d7d; font-size: 8px; font-weight: 650; letter-spacing: 0.13em; } .register-form-heading { margin-bottom: 20px; } .register-form-heading h2 { font-size: 25px; } .register-form { gap: 12px; } .register-copyright { padding-top: 22px; } }
+@media (prefers-reduced-motion: reduce) { .register-spinner { animation-duration: 1.5s; } *, *::before, *::after { transition-duration: 0.01ms !important; } }

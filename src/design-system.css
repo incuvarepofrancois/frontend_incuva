@@ -1,0 +1,47 @@
+/* INCUVA OIS design tokens — shared foundation for the application shell and pages. */
+:root {
+  --ois-ink: #18212d;
+  --ois-ink-soft: #35424a;
+  --ois-muted: #68717b;
+  --ois-muted-soft: #8a918f;
+  --ois-canvas: #f4f2ed;
+  --ois-surface: #ffffff;
+  --ois-surface-subtle: #f8f7f3;
+  --ois-line: #dedbd5;
+  --ois-line-strong: #c9c2b8;
+  --ois-primary: #192630;
+  --ois-primary-hover: #2a3a43;
+  --ois-accent: #a55f45;
+  --ois-accent-soft: #f3eee8;
+  --ois-teal: #4f7a76;
+  --ois-success: #55705b;
+  --ois-success-soft: #f1f6f0;
+  --ois-warning: #8a673b;
+  --ois-warning-soft: #fbf5e9;
+  --ois-danger: #9b5948;
+  --ois-danger-soft: #fff4f1;
+  --ois-radius-sm: 4px;
+  --ois-radius-md: 8px;
+  --ois-radius-lg: 12px;
+  --ois-shadow-sm: 0 1px 2px rgba(24, 33, 45, 0.04);
+  --ois-shadow-md: 0 14px 36px rgba(24, 33, 45, 0.08);
+  --ois-font: 'DM Sans', Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --ois-ease: cubic-bezier(.2, .75, .25, 1);
+}
+
+button, input, textarea, select { font-family: var(--ois-font); }
+button, [role='button'] { min-height: 32px; }
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 3px solid rgba(165, 95, 69, 0.36);
+  outline-offset: 2px;
+}
+
+.ois-status { display: inline-flex; align-items: center; gap: 6px; width: fit-content; padding: 4px 7px; border: 1px solid currentColor; border-radius: 999px; font-size: 11px; font-weight: 650; line-height: 1; }
+.ois-status::before { width: 6px; height: 6px; border-radius: 50%; background: currentColor; content: ''; }
+.ois-status--success { color: var(--ois-success); background: var(--ois-success-soft); }
+.ois-status--warning { color: var(--ois-warning); background: var(--ois-warning-soft); }
+.ois-status--danger { color: var(--ois-danger); background: var(--ois-danger-soft); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}

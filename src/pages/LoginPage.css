@@ -1,0 +1,121 @@
+.login-page {
+  --login-ink: #18212d;
+  --login-muted: #68717b;
+  --login-border: #dedbd5;
+  --login-accent: #a55f45;
+  display: grid;
+  min-height: 100vh;
+  min-height: 100dvh;
+  place-items: center;
+  padding: 38px 24px;
+  color: var(--login-ink);
+  background: #f4f2ed;
+}
+
+.login-shell {
+  display: grid;
+  width: min(100%, 920px);
+  min-height: 540px;
+  grid-template-columns: 0.94fr 1fr;
+  overflow: hidden;
+  border: 1px solid var(--login-border);
+  background: #fff;
+  box-shadow: 0 20px 65px rgba(24, 33, 45, 0.07);
+}
+
+.login-story {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  padding: 34px 38px 26px;
+  color: #f4f2ed;
+  background: #192630;
+}
+
+.login-brand {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: 10px;
+  color: #f4f2ed;
+  font-size: 13px;
+  font-weight: 750;
+  letter-spacing: 0.13em;
+  text-decoration: none;
+}
+
+.login-brand-mark {
+  display: grid;
+  width: 31px;
+  height: 31px;
+  place-items: center;
+  border: 1px solid rgba(244, 242, 237, 0.24);
+  color: #d6b8a6;
+  font-family: Georgia, serif;
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.login-story-copy { max-width: 400px; margin: auto 0; padding: 58px 0 70px; }
+.login-eyebrow, .login-form-kicker { color: #a55f45; font-size: 9px; font-weight: 700; letter-spacing: 0.16em; }
+.login-eyebrow { color: #d6b8a6; }
+.login-story-copy h1 { margin: 17px 0 14px; color: #f4f2ed; font-size: clamp(30px, 3.6vw, 43px); font-weight: 550; letter-spacing: -0.055em; line-height: 1.12; }
+.login-story-copy h1 span { color: #d6b8a6; }
+.login-story-copy p { max-width: 340px; margin: 0; color: #c1c7c8; font-size: 13px; line-height: 1.75; }
+.login-trust-note { display: flex; align-items: center; gap: 9px; color: #d0d2ce; font-size: 10px; line-height: 1.5; }
+.login-trust-note svg { flex: 0 0 auto; color: #c18b70; }
+.login-story-index { margin-top: 25px; color: #8c999e; font-size: 8px; font-weight: 600; letter-spacing: 0.12em; }
+.login-story-index span { padding: 0 5px; color: #a55f45; }
+
+.login-form-panel { display: flex; min-width: 0; flex-direction: column; justify-content: center; padding: 58px clamp(30px, 5vw, 64px) 28px; }
+.login-mobile-brand { display: none; }
+.login-form-heading { margin-bottom: 31px; }
+.login-form-kicker { display: block; margin-bottom: 10px; }
+.login-form-heading h2 { margin: 0; color: var(--login-ink); font-size: 28px; font-weight: 600; letter-spacing: -0.045em; }
+.login-form-heading p { margin: 8px 0 0; color: var(--login-muted); font-size: 12px; line-height: 1.6; }
+.login-form { display: grid; gap: 19px; }
+.login-field label { display: block; margin-bottom: 7px; color: #39434e; font-size: 11px; font-weight: 650; }
+.login-field input { display: block; width: 100%; min-height: 43px; padding: 0 12px; border: 1px solid #d8d5ce; border-radius: 2px; outline: none; color: var(--login-ink); background: #fff; font: inherit; font-size: 12px; transition: border-color 150ms ease, box-shadow 150ms ease; }
+.login-field input::placeholder { color: #a0a19e; }
+.login-field input:hover { border-color: #b9b2a7; }
+.login-field input:focus { border-color: #a55f45; box-shadow: 0 0 0 3px rgba(165, 95, 69, 0.11); }
+.login-submit { display: inline-flex; min-height: 44px; align-items: center; justify-content: center; gap: 9px; margin-top: 4px; border: 1px solid #192630; border-radius: 2px; color: #f4f2ed; background: #192630; font: inherit; font-size: 12px; font-weight: 600; cursor: pointer; transition: background 150ms ease, border-color 150ms ease; }
+.login-submit:hover:not(:disabled) { border-color: #2a3a43; background: #2a3a43; }
+.login-submit:disabled { cursor: wait; opacity: 0.72; }
+.login-submit:focus-visible { outline: 2px solid #a55f45; outline-offset: 3px; }
+.login-spinner { width: 14px; height: 14px; border: 2px solid rgba(244, 242, 237, 0.35); border-top-color: #f4f2ed; border-radius: 50%; animation: login-spin 700ms linear infinite; }
+.login-error { padding: 10px 12px; border: 1px solid #e2c8bd; color: #874a3b; background: #fbf4f0; font-size: 11px; line-height: 1.5; }
+.login-security-note { display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 24px; color: #737a7c; font-size: 10px; }
+.login-security-note svg { color: #8b5947; }
+.login-signup-link { margin: 17px 0 0; color: #737a7c; font-size: 11px; text-align: center; }
+.login-signup-link a { color: #8b5947; font-weight: 650; text-decoration: underline; text-decoration-color: rgba(139, 89, 71, 0.35); text-underline-offset: 3px; }
+.login-signup-link a:hover { color: #192630; text-decoration-color: currentColor; }
+.login-signup-link a:focus-visible { border-radius: 1px; outline: 2px solid #a55f45; outline-offset: 3px; }
+.login-copyright { margin: auto 0 0; padding-top: 35px; color: #8a8f90; font-size: 9px; text-align: center; }
+@keyframes login-spin { to { transform: rotate(360deg); } }
+
+@media (max-width: 700px) {
+  .login-page { place-items: start center; padding: 20px 14px; }
+  .login-shell { width: min(100%, 470px); min-height: min(700px, calc(100dvh - 40px)); grid-template-columns: 1fr; }
+  .login-story { min-height: 185px; padding: 20px 23px; }
+  .login-brand { font-size: 11px; }
+  .login-brand-mark { width: 27px; height: 27px; font-size: 18px; }
+  .login-story-copy { margin: auto 0; padding: 28px 0 20px; }
+  .login-eyebrow { font-size: 8px; }
+  .login-story-copy h1 { margin: 10px 0 7px; font-size: 25px; }
+  .login-story-copy p { font-size: 11px; }
+  .login-trust-note, .login-story-index { display: none; }
+  .login-form-panel { padding: 30px 23px 22px; }
+  .login-form-heading { margin-bottom: 25px; }
+  .login-mobile-brand { display: block; margin-bottom: 24px; color: #7b7d7d; font-size: 8px; font-weight: 650; letter-spacing: 0.13em; }
+  .login-mobile-brand span { color: #a55f45; }
+  .login-form-heading h2 { font-size: 25px; }
+  .login-copyright { padding-top: 28px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .login-spinner { animation-duration: 1.5s; }
+  *, *::before, *::after { transition-duration: 0.01ms !important; }
+}
