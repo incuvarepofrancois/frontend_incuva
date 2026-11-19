@@ -4,6 +4,8 @@ import { Building2, ChevronDown, ChevronLeft, ChevronRight, ClipboardCheck, GitB
 import { getRefreshToken, getToken, removeToken } from './services/auth';
 import { getCurrentUser, logout } from './services/api';
 import DashboardPage from './pages/DashboardPage';
+import EmployeesPage from './pages/EmployeesPage';
+import EmployeeProfilePage from './pages/EmployeeProfilePage';
 import OnboardingPage from './pages/OnboardingPage';
 import WorkspaceLayout from './pages/workspace/WorkspaceLayout';
 import IntegrationsPage from './pages/workspace/IntegrationsPage';
@@ -19,6 +21,7 @@ import OrganizationLayout from './pages/OrganizationLayout';
 import './App.css';
 
 const overviewLinks = [{ to: '/dashboard', label: 'Vue d’ensemble', icon: LayoutDashboard, end: true }];
+const employeeLinks = [{ to: '/employees', label: 'Employees', icon: Users }];
 const onboardingLinks = [{ to: '/onboarding', label: 'Parcours', icon: ClipboardCheck }];
 const operationsLinks = [
   { to: '/automations', label: 'Scénarios', icon: GitBranch, end: true },
@@ -34,6 +37,7 @@ const organizationLinks = [
 
 const pageDetails = {
   '/dashboard': ['Vue d’ensemble', 'Overview'],
+  '/employees': ['Employees', 'Organization'],
   '/onboarding': ['Parcours d’intégration', 'Onboarding'],
   '/workspace/integrations': ['Intégrations RH', 'Operations'],
   '/workspace/sources': ['Sources connectées', 'Operations'],
@@ -74,7 +78,9 @@ function NavGroup({ label, icon: Icon, items, id, open, active, collapsed, onTog
 
 function AppLayout({ user, onLogout }) {
   const location = useLocation();
-  const [title, crumb] = pageDetails[location.pathname] || (location.pathname.startsWith('/automations/') ? ['Modifier le scénario', 'Operations'] : ['Vue d’ensemble', 'Overview']);
+  const [title, crumb] = pageDetails[location.pathname]
+    || (location.pathname.startsWith('/employees/') ? ['Employee profile', 'Employees'] : null)
+    || (location.pathname.startsWith('/automations/') ? ['Modifier le scénario', 'Operations'] : ['Vue d’ensemble', 'Overview']);
   const isOnboarding = location.pathname === '/onboarding';
   const isOperations = location.pathname.startsWith('/automations') || location.pathname.startsWith('/workspace/');
   const isOrganization = location.pathname.startsWith('/organization/');
@@ -115,6 +121,7 @@ function AppLayout({ user, onLogout }) {
       </div>
       <nav className="main-nav" id="dashboard-sidebar-navigation" aria-label="Navigation principale">
         <span className="sidebar-label">Overview</span><LinkList links={overviewLinks} onNavigate={closeMobile} />
+        <span className="sidebar-label">Organization</span><LinkList links={employeeLinks} onNavigate={closeMobile} />
         <span className="sidebar-label">Onboarding</span>
         <NavGroup label="Onboarding" icon={ClipboardCheck} items={onboardingLinks} id="onboarding-subnav" open={onboardingOpen} active={isOnboarding} collapsed={collapsed} onNavigate={closeMobile} onToggle={() => collapsed ? openGroup(setOnboardingOpen) : setOnboardingOpen((open) => !open)} />
         <span className="sidebar-label">Operations</span>
@@ -137,8 +144,8 @@ function AppLayout({ user, onLogout }) {
       </header>
       <main className="page-content">
         <Routes>
-          <Route path="/" element={<Navigate to="/dashboard" replace />} /><Route path="/dashboard" element={<DashboardPage />} /><Route path="/risk" element={<Navigate to="/dashboard" replace />} /><Route path="/meetings" element={<Navigate to="/dashboard" replace />} />
-          <Route path="/onboarding" element={<div className="legacy-module-page"><OnboardingPage /></div>} />
+          <Route path="/" element={<Navigate to="/dashboard" replace />} /><Route path="/dashboard" element={<DashboardPage />} /><Route path="/employees" element={<div className="legacy-module-page"><EmployeesPage /></div>} /><Route path="/employees/:employeeId" element={<div className="legacy-module-page"><EmployeeProfilePage /></div>} /><Route path="/risk" element={<Navigate to="/dashboard" replace />} /><Route path="/meetings" element={<Navigate to="/dashboard" replace />} />
+          <Route path="/onboarding" element={<div className="legacy-module-page"><OnboardingPage currentUser={user} /></div>} />
           <Route path="/workspace" element={<div className="legacy-module-page"><WorkspaceLayout /></div>}><Route index element={<Navigate to="integrations" replace />} /><Route path="models" element={<Navigate to="integrations" replace />} /><Route path="logs" element={<Navigate to="/onboarding" replace />} /><Route path="integrations" element={<IntegrationsPage />} /><Route path="sources" element={<ConnectedSourcesPage />} /></Route>
           <Route path="/automations" element={<div className="legacy-module-page"><AutomationLayout /></div>}><Route index element={<AutomationsPage user={user} />} /><Route path="new" element={<AutomationBuilderPage user={user} />} /><Route path="runs" element={<AutomationRunsPage user={user} />} /><Route path=":workflowId/edit" element={<AutomationBuilderPage user={user} />} /></Route>
           <Route path="/settings" element={<SettingsLayout user={user} />}><Route index element={<Navigate to="budget" replace />} /><Route path="budget" element={isAdmin ? <BudgetSettingsPage /> : <Navigate to="/settings/security" replace />} /><Route path="retention" element={isAdmin ? <RetentionSettingsPage /> : <Navigate to="/settings/security" replace />} /><Route path="guardrails" element={isAdmin ? <GuardrailsSettingsPage /> : <Navigate to="/settings/security" replace />} /><Route path="guardrails/documentation" element={isAdmin ? <GuardrailsDocumentationPage /> : <Navigate to="/settings/security" replace />} /><Route path="audit" element={isAdmin ? <AuditSettingsPage /> : <Navigate to="/settings/security" replace />} /><Route path="security" element={<AccountSecuritySettingsPage />} /></Route>

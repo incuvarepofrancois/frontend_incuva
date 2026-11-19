@@ -68,7 +68,11 @@ async function request(path, options = {}, { authRetry = true } = {}) {
   return parseResponse(response);
 }
 
-export const getEmployees = () => request('/v1/employees');
+export const getEmployees = (params = {}) => {
+  const query = new URLSearchParams(params);
+  return request(`/v1/employees${query.size ? `?${query}` : ''}`);
+};
+export const getEmployee = (id) => request(`/v1/employees/${encodeURIComponent(id)}`);
 export const getEmployeeAbsences = (id) => request(`/v1/employees/${id}/absences`);
 export const getEmployeeSignals = (id) => request(`/v1/employees/${id}/signals`);
 export const predictTurnover = (payload) => request('/v1/predict-turnover', { method: 'POST', body: JSON.stringify(payload) });
